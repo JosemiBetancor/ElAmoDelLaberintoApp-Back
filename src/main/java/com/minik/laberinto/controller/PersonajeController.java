@@ -69,6 +69,7 @@ public class PersonajeController {
 		current.setExperiencia(m.getExperiencia());
 		current.setNivel(m.getNivel());
 		current.setNombre(m.getNombre());
+		current.setImagen(m.getImagen());
 		PersonajeService.save(current);
 		return new ResponseEntity<>(PersonajeDTO.newInstance(current), HttpStatus.OK);
 	}

@@ -15,8 +15,9 @@ public class PersonajeDTO implements Serializable {
 	private final int experiencia;
 	private final int nivel;
 	private final String nombre;
+	private final String imagen;
 
-	public PersonajeDTO(int id, String alineamiento, String clase, int experiencia, int nivel, String nombre) {
+	public PersonajeDTO(int id, String alineamiento, String clase, int experiencia, int nivel, String nombre,String imagen) {
 		super();
 		this.id = id;
 		this.alineamiento = alineamiento;
@@ -24,11 +25,12 @@ public class PersonajeDTO implements Serializable {
 		this.experiencia = experiencia;
 		this.nivel = nivel;
 		this.nombre = nombre;
+		this.imagen=imagen;
 	}
 
 	public static PersonajeDTO newInstance(Personaje p) {
 		return new PersonajeDTO(p.getId(), p.getAlineamiento(), p.getClase(), p.getExperiencia(), p.getNivel(),
-				p.getNombre());
+				p.getNombre(),p.getImagen());
 
 	}
 	public static List<PersonajeDTO> mapList(List<Personaje> personajes) {
@@ -65,4 +67,13 @@ public class PersonajeDTO implements Serializable {
 	public String getNombre() {
 		return nombre;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+	
 }

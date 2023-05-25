@@ -19,6 +19,7 @@ public class Personaje implements Serializable {
 	private String alineamiento;
 
 	private String clase;
+	private String imagen;
 
 	private int experiencia;
 
@@ -151,6 +152,14 @@ public class Personaje implements Serializable {
 
 	public void setMoneda(Moneda moneda) {
 		this.moneda = moneda;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 }
