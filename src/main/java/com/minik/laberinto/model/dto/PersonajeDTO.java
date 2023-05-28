@@ -14,10 +14,12 @@ public class PersonajeDTO implements Serializable {
 	private final String clase;
 	private final int experiencia;
 	private final int nivel;
+	private final int claseArmadura;
+	private final int vida;
 	private final String nombre;
 	private final String imagen;
 
-	public PersonajeDTO(int id, String alineamiento, String clase, int experiencia, int nivel, String nombre,String imagen) {
+	public PersonajeDTO(int id, String alineamiento, String clase, int experiencia, int nivel,int claseArmadura,int vida, String nombre,String imagen) {
 		super();
 		this.id = id;
 		this.alineamiento = alineamiento;
@@ -26,10 +28,12 @@ public class PersonajeDTO implements Serializable {
 		this.nivel = nivel;
 		this.nombre = nombre;
 		this.imagen=imagen;
+		this.claseArmadura=claseArmadura;
+		this.vida=vida;
 	}
 
 	public static PersonajeDTO newInstance(Personaje p) {
-		return new PersonajeDTO(p.getId(), p.getAlineamiento(), p.getClase(), p.getExperiencia(), p.getNivel(),
+		return new PersonajeDTO(p.getId(), p.getAlineamiento(), p.getClase(), p.getExperiencia(), p.getNivel(),p.getClaseArmadura(),p.getVida(),
 				p.getNombre(),p.getImagen());
 
 	}
@@ -74,6 +78,14 @@ public class PersonajeDTO implements Serializable {
 
 	public String getImagen() {
 		return imagen;
+	}
+
+	public int getClaseArmadura() {
+		return claseArmadura;
+	}
+
+	public int getVida() {
+		return vida;
 	}
 	
 }

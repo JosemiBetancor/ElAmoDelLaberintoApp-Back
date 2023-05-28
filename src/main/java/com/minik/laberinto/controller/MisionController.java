@@ -69,7 +69,7 @@ public class MisionController {
 	public ResponseEntity<?> MisionTimeOut(@PathVariable int id) {
 	    Mision current = MisionService.findById(id);
 	    current.setTiempoRestante(0);
-	    current.setEstado("COMPLETADO");
+	    current.setEstado("FALLADO");
 	    MisionService.save(current);
 	    return new ResponseEntity<>(MisionDTO.newInstance(current), HttpStatus.OK);
 	}

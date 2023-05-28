@@ -26,7 +26,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("media")
 @AllArgsConstructor
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class MediaController {
 	private final StorageService storageservice;
 	private final HttpServletRequest request;
@@ -41,7 +41,6 @@ public class MediaController {
 	}
 
 	@GetMapping("{filename:.+}")
-
 	public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
 		Resource file = storageservice.loadAsResource(filename);
 		String contentType = Files.probeContentType(file.getFile().toPath());
