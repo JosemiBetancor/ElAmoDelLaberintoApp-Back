@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +31,7 @@ public class InventarioController {
 	@Autowired
 	PersonajeService PersonajeService;
 	
-	@GetMapping("/personaje/{id}/objetos")
+	@GetMapping("/personajes/{id}/objetos")
 	public ResponseEntity<?> getInventarioByPersonajeId(@PathVariable int id) {
 	    Personaje personaje = PersonajeService.findById(id);
 	    if (personaje == null) {
@@ -52,6 +53,16 @@ public class InventarioController {
 		object.setPeso(o.getPeso());
 		object.setValor(o.getValor());
 		object.setPersonaje(personaje);
+		InventarioService.save(object);
+		return new ResponseEntity<>(InventarioDTO.newInstance(object), HttpStatus.OK);
+	}
+	@PutMapping("/objeto/{id}")
+	public ResponseEntity<?> updateObjeto(@RequestBody Objeto o,@PathVariable int id) {
+		Objeto object=InventarioService.findById(id);
+		object.setConsumible(o.getConsumible());
+		object.setNombre(o.getNombre());
+		object.setPeso(o.getPeso());
+		object.setValor(o.getValor());
 		InventarioService.save(object);
 		return new ResponseEntity<>(InventarioDTO.newInstance(object), HttpStatus.OK);
 	}
