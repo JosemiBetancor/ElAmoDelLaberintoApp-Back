@@ -59,6 +59,7 @@ public class PersonajeController {
 		p.setClaseArmadura(m.getClaseArmadura());
 		p.setVida(m.getVida());
 		p.setNombre(m.getNombre());
+		p.setImagen("http://localhost:8083/media/images.jpeg");
 		PersonajeService.save(p);
 		return new ResponseEntity<>(PersonajeDTO.newInstance(p), HttpStatus.OK);
 	}
