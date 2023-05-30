@@ -19,10 +19,13 @@ public class Personaje implements Serializable {
 	private String alineamiento;
 
 	private String clase;
+	private String imagen;
 
 	private int experiencia;
 
 	private int nivel;
+	private int claseArmadura;
+	private int vida;
 
 	private String nombre;
 
@@ -151,6 +154,30 @@ public class Personaje implements Serializable {
 
 	public void setMoneda(Moneda moneda) {
 		this.moneda = moneda;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	public int getClaseArmadura() {
+		return claseArmadura;
+	}
+
+	public void setClaseArmadura(int claseArmadura) {
+		this.claseArmadura = claseArmadura;
+	}
+
+	public int getVida() {
+		return vida;
+	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
 
 }

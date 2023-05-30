@@ -45,34 +45,17 @@ public class MonedaController {
 		Moneda moneda=personaje.getMoneda();
 		return new ResponseEntity<>(MonedaDTO.newInstance(moneda), HttpStatus.OK);
 	}
-	@PutMapping("/moneda/bronce/{id}")
-	public ResponseEntity<?> UpdateBronce(@RequestBody int bronce, @PathVariable int id) {
+	@PutMapping("/moneda/monedero/{id}")
+	public ResponseEntity<?> UpdateBronce(@RequestBody Moneda monedero, @PathVariable int id) {
 	    Moneda current = monedaService.findById(id);
-	    current.setBronce(bronce);
+	    current.setBronce(monedero.getBronce());
+	    current.setPlata(monedero.getPlata());
+	    current.setOro(monedero.getOro());
+	    current.setPlatino(monedero.getPlatino());
 	    monedaService.save(current);
 	    return new ResponseEntity<>(MonedaDTO.newInstance(current), HttpStatus.OK);
 	}
-	@PutMapping("/moneda/plata/{id}")
-	public ResponseEntity<?> UpdatePlata(@RequestBody int plata, @PathVariable int id) {
-	    Moneda current = monedaService.findById(id);
-	    current.setPlata(plata);
-	    monedaService.save(current);
-	    return new ResponseEntity<>(MonedaDTO.newInstance(current), HttpStatus.OK);
-	}
-	@PutMapping("/moneda/oro/{id}")
-	public ResponseEntity<?> UpdateOro(@RequestBody int oro, @PathVariable int id) {
-	    Moneda current = monedaService.findById(id);
-	    current.setOro(oro);
-	    monedaService.save(current);
-	    return new ResponseEntity<>(MonedaDTO.newInstance(current), HttpStatus.OK);
-	}
-	@PutMapping("/moneda/platino/{id}")
-	public ResponseEntity<?> UpdatePlatino(@RequestBody int platino, @PathVariable int id) {
-	    Moneda current = monedaService.findById(id);
-	    current.setPlatino(platino);
-	    monedaService.save(current);
-	    return new ResponseEntity<>(MonedaDTO.newInstance(current), HttpStatus.OK);
-	}
+	
 
 	@PostMapping("/monedero/{idPersonaje}")
 	public ResponseEntity<?> addPersonaje(@PathVariable int idPersonaje,@RequestBody Moneda moneda) {

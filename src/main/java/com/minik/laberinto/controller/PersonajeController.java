@@ -40,13 +40,13 @@ public class PersonajeController {
 				.collect(Collectors.toList());
 	}
 
-	@GetMapping("/personaje/{id}")
+	@GetMapping("/personajes/{id}")
 	public PersonajeDTO getPersonaje(@PathVariable int id) {
 		Personaje p = PersonajeService.findById(id);
 		return PersonajeDTO.newInstance(p);
 	}
 
-	@PostMapping("/personaje")
+	@PostMapping("/personajes")
 	public ResponseEntity<?> addPersonaje(@RequestBody Personaje m) {
 		Personaje p = new Personaje();
 		p.setAlineamiento(m.getAlineamiento());
@@ -56,24 +56,30 @@ public class PersonajeController {
 		p.setObjetos(m.getObjetos());
 		p.setLugar(m.getLugar());
 		p.setNivel(m.getNivel());
+		p.setClaseArmadura(m.getClaseArmadura());
+		p.setVida(m.getVida());
 		p.setNombre(m.getNombre());
+		p.setImagen("http://localhost:8083/media/images.jpeg");
 		PersonajeService.save(p);
 		return new ResponseEntity<>(PersonajeDTO.newInstance(p), HttpStatus.OK);
 	}
 
-	@PutMapping("/personaje/{id}")
-	public ResponseEntity<?> addPersonaje(@RequestBody Personaje m, @PathVariable int id) {
+	@PutMapping("/personajes/{id}")
+	public ResponseEntity<?> updatePersonaje(@RequestBody Personaje m, @PathVariable int id) {
 		Personaje current = PersonajeService.findById(id);
 		current.setAlineamiento(m.getAlineamiento());
 		current.setClase(m.getClase());
 		current.setExperiencia(m.getExperiencia());
 		current.setNivel(m.getNivel());
 		current.setNombre(m.getNombre());
+		current.setImagen(m.getImagen());
+		current.setClaseArmadura(m.getClaseArmadura());
+		current.setVida(m.getVida());
 		PersonajeService.save(current);
 		return new ResponseEntity<>(PersonajeDTO.newInstance(current), HttpStatus.OK);
 	}
-
-	@DeleteMapping("/personaje/{id}")
+	
+	@DeleteMapping("/personajes/{id}")
 	public ResponseEntity<?> deletePersonaje(@PathVariable int id) {
 		PersonajeService.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);

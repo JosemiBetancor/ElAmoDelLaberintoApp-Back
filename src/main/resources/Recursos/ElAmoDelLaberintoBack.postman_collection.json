@@ -1,0 +1,590 @@
+{
+	"info": {
+		"_postman_id": "44cb642c-08f4-444b-8806-3dce78ab13dc",
+		"name": "ElAmoDelLaberintoBack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25496703"
+	},
+	"item": [
+		{
+			"name": "Personaje",
+			"item": [
+				{
+					"name": "Get Personajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/personajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"personajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post personaje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"alineamiento\": \"Legal bueno\",\r\n        \"clase\": \"Enano\",\r\n        \"experiencia\": 15000,\r\n        \"nivel\": 10,\r\n        \"nombre\": \"Gimbli\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/personaje",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"personaje"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Personaje",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/personaje/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"personaje",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Personaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"alineamiento\": \"Legal bueno\",\r\n        \"clase\": \"Enano\",\r\n        \"experiencia\": 15000,\r\n        \"nivel\": 10,\r\n        \"nombre\": \"Gimbli\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/personaje/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"personaje",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Personaje",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Moneda",
+			"item": [
+				{
+					"name": "get monedas de cada jugador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/monedas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"monedas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Monedero",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "656",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/moneda/oro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"moneda",
+								"oro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get monedero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/monedero/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"monedero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear monedero",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"bronce\": 0,\r\n        \"plata\": 0,\r\n        \"oro\": 0,\r\n        \"platino\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/monedero/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"monedero",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "GetInventarioDePersonaje",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/personaje/2/objetos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"personaje",
+								"2",
+								"objetos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "añadirObjeto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"consumible\": 1,\r\n        \"nombre\": \"Escudo de Guerrero\",\r\n        \"peso\": 10,\r\n        \"valor\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/objeto/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"objeto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteObjeto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/objeto/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"objeto",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lugar",
+			"item": [
+				{
+					"name": "GetLugares",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "new lugar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"alineacionAsignada\": \"Cualquiera\",\r\n        \"claseAsignada\": \"Cualquiera\",\r\n        \"tipo\": \"Casa\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/lugar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"lugar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLugar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"alineacionAsignada\": \"Bueno\",\r\n        \"claseAsignada\": \"Cualquiera\",\r\n        \"tipo\": \"Casa\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/lugar/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"lugar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMisionesDeLugar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/lugar/misiones/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"lugar",
+								"misiones",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPersonajesDeLugar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/lugar/personajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"lugar",
+								"personajes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Misiones",
+			"item": [
+				{
+					"name": "Get misiones",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/misiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"misiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMision",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"estado\": \"EN_CURSO\",\r\n        \"objetivos\": \"Robar la joya de la corona\",\r\n        \"recompensa\": \"10 Monedas de oro,espada corta de mago,escudo del rey\",\r\n        \"tiempoRestante\": 25\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/mision/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"mision",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "timeout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/mision/timeout/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"mision",
+								"timeout",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMision",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/mision/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"mision",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get mision",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Cambiar estado",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "subir imagen",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ver imagen",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Habilidad",
+			"item": [
+				{
+					"name": "GetHabilidadesPersonaje",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "añadir habilidad",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateHabilidad",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
