@@ -21,23 +21,20 @@ import com.minik.laberinto.model.entity.Personaje;
 import com.minik.laberinto.model.service.LugarService;
 import com.minik.laberinto.model.service.PersonajeService;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:8080" })
 @RestController
 @RequestMapping("/api")
 public class PersonajeController {
 
 	@Autowired
 	PersonajeService PersonajeService;
-	
+
 	@Autowired
 	LugarService lugarService;
-	
+
 	@GetMapping("/personajes")
 	public List<PersonajeDTO> getUsers() {
-		return PersonajeService.findAll()
-				.stream()
-				.map(PersonajeDTO::newInstance)
-				.collect(Collectors.toList());
+		return PersonajeService.findAll().stream().map(PersonajeDTO::newInstance).collect(Collectors.toList());
 	}
 
 	@GetMapping("/personajes/{id}")
@@ -78,7 +75,7 @@ public class PersonajeController {
 		PersonajeService.save(current);
 		return new ResponseEntity<>(PersonajeDTO.newInstance(current), HttpStatus.OK);
 	}
-	
+
 	@DeleteMapping("/personajes/{id}")
 	public ResponseEntity<?> deletePersonaje(@PathVariable int id) {
 		PersonajeService.delete(id);

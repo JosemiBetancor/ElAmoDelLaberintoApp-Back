@@ -22,8 +22,7 @@ import com.minik.laberinto.model.dto.PersonajeDTO;
 import com.minik.laberinto.model.entity.Lugar;
 import com.minik.laberinto.model.service.LugarService;
 import com.minik.laberinto.model.service.PersonajeService;
-
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:8080" })
 @RestController
 @RequestMapping("/api")
 public class LugarController {

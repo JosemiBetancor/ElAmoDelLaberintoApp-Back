@@ -20,8 +20,7 @@ import com.minik.laberinto.model.entity.Objeto;
 import com.minik.laberinto.model.entity.Personaje;
 import com.minik.laberinto.model.service.ObjetoService;
 import com.minik.laberinto.model.service.PersonajeService;
-
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:8080" })
 @RestController
 @RequestMapping("/api")
 public class InventarioController {

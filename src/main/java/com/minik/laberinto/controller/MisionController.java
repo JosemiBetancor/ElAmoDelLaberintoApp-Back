@@ -21,8 +21,7 @@ import com.minik.laberinto.model.entity.Lugar;
 import com.minik.laberinto.model.entity.Mision;
 import com.minik.laberinto.model.service.LugarService;
 import com.minik.laberinto.model.service.MisionService;
-
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:8080" })
 @RestController
 @RequestMapping("/api")
 public class MisionController {

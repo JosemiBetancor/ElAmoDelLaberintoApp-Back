@@ -22,11 +22,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.minik.laberinto.model.service.StorageService;
 
 import lombok.AllArgsConstructor;
-
+@CrossOrigin(origins = { "http://localhost:8080" })
 @RestController
 @RequestMapping("media")
 @AllArgsConstructor
-@CrossOrigin(origins = {"http://localhost:4200"})
 public class MediaController {
 	private final StorageService storageservice;
 	private final HttpServletRequest request;
